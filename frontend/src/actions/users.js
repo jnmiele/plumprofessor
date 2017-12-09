@@ -1,4 +1,5 @@
 export function loginUser(params) {
+  console.log(params)
   return function(dispatch) {
     fetch('http://localhost:3000/login', {
       method: 'POST',
