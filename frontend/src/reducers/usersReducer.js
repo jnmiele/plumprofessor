@@ -1,7 +1,10 @@
-function usersReducer(state = initialState, action) {
+function usersReducer(state = {}, action) {
 	switch (action.type) {
 		case 'LOGIN_USER':
-			debugger
+			state = {
+				user: action.payload.user,
+				jwt: action.payload.jwt
+			}
 			return state
 		default:
 			return state

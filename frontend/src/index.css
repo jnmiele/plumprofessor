@@ -3,3 +3,23 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+#first-nav-item {
+	display: inline-block;
+}
+
+.nav-item {
+	display: inline-block;
+}
+
+.dashboard-header {
+	display: inline-block;
+	border: solid 1px;
+	width: 300px;
+	height: 110px;
+	vertical-align: middle;
+}
+
+.dashboard-header:hover {
+	cursor: pointer;
+}

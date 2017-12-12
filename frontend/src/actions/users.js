@@ -1,5 +1,5 @@
-export function loginUser(params) {
-  console.log(params)
+export function loginUser(userParams) {
+  const body = JSON.stringify(userParams)
   return function(dispatch) {
     fetch('http://localhost:3000/login', {
       method: 'POST',
@@ -11,6 +11,10 @@ export function loginUser(params) {
     })
     .then(res => res.json())
     .then(res => dispatch(doLogin(res)))
+    .then(res => {
+      {res.payload.jwt? localStorage.setItem('jwtToken', res.payload.jwt):null}
+    })
+  }
 }
 
 function doLogin(params) {
